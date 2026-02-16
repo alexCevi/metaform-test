@@ -1,8 +1,93 @@
 {
   "version": "1.0",
-  "capturedAt": "2026-02-16T02:44:08.903Z",
-  "shop": "metaquote.myshopify.com",
+  "capturedAt": "2026-02-16T09:40:06.282Z",
+  "shop": "admin-ui-sbx.myshopify.com",
   "metafieldDefinitions": [
+    {
+      "ownerType": "ARTICLE",
+      "namespace": "custom",
+      "key": "material_obj_ref",
+      "name": "material obj ref",
+      "description": "",
+      "type": "metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12213518396"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "COMPANY",
+      "namespace": "custom",
+      "key": "company_def_test_new_pinned",
+      "name": "company def test new pinned",
+      "description": "",
+      "type": "json",
+      "validations": [
+        {
+          "name": "schema",
+          "value": "{\"type\":\"object\",\"required\":[\"version\",\"dimensions\",\"materials\"],\"properties\":{\"version\":{\"type\":\"string\"},\"dimensions\":{\"type\":\"object\",\"required\":[\"width_mm\",\"height_mm\",\"depth_mm\"],\"properties\":{\"width_mm\":{\"type\":\"number\"},\"height_mm\":{\"type\":\"number\"},\"depth_mm\":{\"type\":\"number\"}}},\"materials\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"compliance\":{\"type\":\"object\",\"properties\":{\"rohs\":{\"type\":\"boolean\"},\"fcc\":{\"type\":\"boolean\"}}},\"warranty_months\":{\"type\":\"integer\"}}}"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "custom",
+      "key": "optional_products",
+      "name": "Optional Products",
+      "description": "",
+      "type": "list.product_reference",
+      "validations": [],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "shopify",
+      "key": "color-pattern",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "type": "list.metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12213485628"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "shopify",
+      "key": "material",
+      "name": "Material",
+      "description": "Defines a product's primary material, such as cotton or wool",
+      "type": "list.metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12213518396"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
     {
       "ownerType": "PRODUCT",
       "namespace": "test_data",
@@ -62,6 +147,159 @@
     }
   ],
   "metaobjectDefinitions": [
+    {
+      "type": "shopify--color-pattern",
+      "name": "Color",
+      "description": "Defines the primary color or pattern, such as blue or striped",
+      "displayNameKey": "label",
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": false,
+        "translatable": true,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "label",
+          "name": "Label",
+          "type": "single_line_text_field",
+          "description": null,
+          "required": true,
+          "validations": [
+            {
+              "name": "max",
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "key": "color",
+          "name": "Color",
+          "type": "color",
+          "description": null,
+          "required": false,
+          "validations": []
+        },
+        {
+          "key": "image",
+          "name": "Image",
+          "type": "file_reference",
+          "description": null,
+          "required": false,
+          "validations": [
+            {
+              "name": "file_type_options",
+              "value": "[\"Image\"]"
+            }
+          ]
+        },
+        {
+          "key": "color_taxonomy_reference",
+          "name": "Base color",
+          "type": "list.product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "color"
+            },
+            {
+              "name": "list.min",
+              "value": "1"
+            },
+            {
+              "name": "list.max",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "key": "pattern_taxonomy_reference",
+          "name": "Base pattern",
+          "type": "product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "pattern"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "shopify--material",
+      "name": "Material",
+      "description": "Defines a product's primary material, such as cotton or wool",
+      "displayNameKey": "label",
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": false,
+        "translatable": true,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "label",
+          "name": "Label",
+          "type": "single_line_text_field",
+          "description": null,
+          "required": true,
+          "validations": [
+            {
+              "name": "max",
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "key": "taxonomy_reference",
+          "name": "Base material",
+          "type": "product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "material"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "test",
+      "name": "test",
+      "description": "",
+      "displayNameKey": null,
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": true,
+        "translatable": true,
+        "renderable": true
+      },
+      "fieldDefinitions": [
+        {
+          "key": "test",
+          "name": "test",
+          "type": "multi_line_text_field",
+          "description": "",
+          "required": false,
+          "validations": []
+        }
+      ]
+    },
     {
       "type": "test_cart",
       "name": "test-cart",
