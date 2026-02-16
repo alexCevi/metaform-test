@@ -1,37 +1,19 @@
 {
   "version": "1.0",
-  "capturedAt": "2026-02-16T09:40:06.282Z",
-  "shop": "admin-ui-sbx.myshopify.com",
+  "capturedAt": "2026-02-16T10:03:40.332Z",
+  "shop": "gate-dev.myshopify.com",
   "metafieldDefinitions": [
     {
-      "ownerType": "ARTICLE",
-      "namespace": "custom",
-      "key": "material_obj_ref",
-      "name": "material obj ref",
-      "description": "",
-      "type": "metaobject_reference",
+      "ownerType": "PRODUCT",
+      "namespace": "shopify",
+      "key": "activity",
+      "name": "Activity",
+      "description": "Specifies the sport or activity the product is designed for, such as tennis or pilates",
+      "type": "list.metaobject_reference",
       "validations": [
         {
           "name": "metaobject_definition_id",
-          "value": "gid://shopify/MetaobjectDefinition/12213518396"
-        }
-      ],
-      "access": {
-        "admin": "PUBLIC_READ_WRITE",
-        "storefront": "PUBLIC_READ"
-      }
-    },
-    {
-      "ownerType": "COMPANY",
-      "namespace": "custom",
-      "key": "company_def_test_new_pinned",
-      "name": "company def test new pinned",
-      "description": "",
-      "type": "json",
-      "validations": [
-        {
-          "name": "schema",
-          "value": "{\"type\":\"object\",\"required\":[\"version\",\"dimensions\",\"materials\"],\"properties\":{\"version\":{\"type\":\"string\"},\"dimensions\":{\"type\":\"object\",\"required\":[\"width_mm\",\"height_mm\",\"depth_mm\"],\"properties\":{\"width_mm\":{\"type\":\"number\"},\"height_mm\":{\"type\":\"number\"},\"depth_mm\":{\"type\":\"number\"}}},\"materials\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"compliance\":{\"type\":\"object\",\"properties\":{\"rohs\":{\"type\":\"boolean\"},\"fcc\":{\"type\":\"boolean\"}}},\"warranty_months\":{\"type\":\"integer\"}}}"
+          "value": "gid://shopify/MetaobjectDefinition/12005212381"
         }
       ],
       "access": {
@@ -41,12 +23,17 @@
     },
     {
       "ownerType": "PRODUCT",
-      "namespace": "custom",
-      "key": "optional_products",
-      "name": "Optional Products",
-      "description": "",
-      "type": "list.product_reference",
-      "validations": [],
+      "namespace": "shopify",
+      "key": "age-group",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "type": "list.metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12005146845"
+        }
+      ],
       "access": {
         "admin": "PUBLIC_READ_WRITE",
         "storefront": "PUBLIC_READ"
@@ -62,7 +49,7 @@
       "validations": [
         {
           "name": "metaobject_definition_id",
-          "value": "gid://shopify/MetaobjectDefinition/12213485628"
+          "value": "gid://shopify/MetaobjectDefinition/12005081309"
         }
       ],
       "access": {
@@ -73,14 +60,50 @@
     {
       "ownerType": "PRODUCT",
       "namespace": "shopify",
-      "key": "material",
-      "name": "Material",
-      "description": "Defines a product's primary material, such as cotton or wool",
+      "key": "size",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
       "type": "list.metaobject_reference",
       "validations": [
         {
           "name": "metaobject_definition_id",
-          "value": "gid://shopify/MetaobjectDefinition/12213518396"
+          "value": "gid://shopify/MetaobjectDefinition/12005114077"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "shopify",
+      "key": "sleeve-length-type",
+      "name": "Sleeve length type",
+      "description": "Specifies the style of sleeves on clothing items, such as short or sleeveless",
+      "type": "list.metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12005179613"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "shopify",
+      "key": "target-gender",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "type": "list.metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12005245149"
         }
       ],
       "access": {
@@ -116,24 +139,6 @@
     },
     {
       "ownerType": "SHOP",
-      "namespace": "checkoutblocks",
-      "key": "blocks_list_checkout_static_content",
-      "name": "Checkout Blocks: Blocks List for: checkout_static_content",
-      "description": null,
-      "type": "list.metaobject_reference",
-      "validations": [
-        {
-          "name": "metaobject_definition_id",
-          "value": "gid://shopify/MetaobjectDefinition/14017921110"
-        }
-      ],
-      "access": {
-        "admin": "PUBLIC_READ_WRITE",
-        "storefront": "NONE"
-      }
-    },
-    {
-      "ownerType": "SHOP",
       "namespace": "test_data",
       "key": "alpine_sports",
       "name": "Alpine sport types",
@@ -147,6 +152,92 @@
     }
   ],
   "metaobjectDefinitions": [
+    {
+      "type": "shopify--activity",
+      "name": "Activity",
+      "description": "Specifies the sport or activity the product is designed for, such as tennis or pilates",
+      "displayNameKey": "label",
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": false,
+        "translatable": true,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "label",
+          "name": "Label",
+          "type": "single_line_text_field",
+          "description": null,
+          "required": true,
+          "validations": [
+            {
+              "name": "max",
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "key": "taxonomy_reference",
+          "name": "Base activity",
+          "type": "product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "activity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "shopify--age-group",
+      "name": "Age group",
+      "description": "Defines the target age range for a product, such as adults or kids",
+      "displayNameKey": "label",
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": false,
+        "translatable": true,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "label",
+          "name": "Label",
+          "type": "single_line_text_field",
+          "description": null,
+          "required": true,
+          "validations": [
+            {
+              "name": "max",
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "key": "taxonomy_reference",
+          "name": "Base age group",
+          "type": "product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "age-group"
+            }
+          ]
+        }
+      ]
+    },
     {
       "type": "shopify--color-pattern",
       "name": "Color",
@@ -233,9 +324,9 @@
       ]
     },
     {
-      "type": "shopify--material",
-      "name": "Material",
-      "description": "Defines a product's primary material, such as cotton or wool",
+      "type": "shopify--size",
+      "name": "Size",
+      "description": "Used to specify the size of a product, such as 0-3 months or Extra large (XL)",
       "displayNameKey": "label",
       "access": {
         "admin": "PUBLIC_READ_WRITE",
@@ -262,24 +353,110 @@
         },
         {
           "key": "taxonomy_reference",
-          "name": "Base material",
+          "name": "Base size",
           "type": "product_taxonomy_value_reference",
           "description": "Base values map to standards for better search and organization",
           "required": true,
           "validations": [
             {
               "name": "product_taxonomy_attribute_handle",
-              "value": "material"
+              "value": "size"
             }
           ]
         }
       ]
     },
     {
-      "type": "test",
-      "name": "test",
+      "type": "shopify--sleeve-length-type",
+      "name": "Sleeve length type",
+      "description": "Specifies the style of sleeves on clothing items, such as short or sleeveless",
+      "displayNameKey": "label",
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": false,
+        "translatable": true,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "label",
+          "name": "Label",
+          "type": "single_line_text_field",
+          "description": null,
+          "required": true,
+          "validations": [
+            {
+              "name": "max",
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "key": "taxonomy_reference",
+          "name": "Base sleeve length type",
+          "type": "product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "sleeve-length-type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "shopify--target-gender",
+      "name": "Target gender",
+      "description": "Identifies the intended gender for a product, such as female, male or unisex",
+      "displayNameKey": "label",
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": false,
+        "translatable": true,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "label",
+          "name": "Label",
+          "type": "single_line_text_field",
+          "description": null,
+          "required": true,
+          "validations": [
+            {
+              "name": "max",
+              "value": "255"
+            }
+          ]
+        },
+        {
+          "key": "taxonomy_reference",
+          "name": "Base target gender",
+          "type": "product_taxonomy_value_reference",
+          "description": "Base values map to standards for better search and organization",
+          "required": true,
+          "validations": [
+            {
+              "name": "product_taxonomy_attribute_handle",
+              "value": "target-gender"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "team_portal",
+      "name": "Team Portals",
       "description": "",
-      "displayNameKey": null,
+      "displayNameKey": "org_name",
       "access": {
         "admin": "PUBLIC_READ_WRITE",
         "storefront": "PUBLIC_READ"
@@ -291,34 +468,54 @@
       },
       "fieldDefinitions": [
         {
-          "key": "test",
-          "name": "test",
-          "type": "multi_line_text_field",
+          "key": "logo",
+          "name": "Logo",
+          "type": "file_reference",
+          "description": "",
+          "required": false,
+          "validations": [
+            {
+              "name": "file_type_options",
+              "value": "[\"Image\"]"
+            }
+          ]
+        },
+        {
+          "key": "org_name",
+          "name": "Org Name",
+          "type": "single_line_text_field",
           "description": "",
           "required": false,
           "validations": []
-        }
-      ]
-    },
-    {
-      "type": "test_cart",
-      "name": "test-cart",
-      "description": "",
-      "displayNameKey": null,
-      "access": {
-        "admin": "PUBLIC_READ_WRITE",
-        "storefront": "PUBLIC_READ"
-      },
-      "capabilities": {
-        "publishable": true,
-        "translatable": false,
-        "renderable": false
-      },
-      "fieldDefinitions": [
+        },
         {
-          "key": "cartlineitems",
-          "name": "cartLineItems",
-          "type": "list.variant_reference",
+          "key": "primary_color",
+          "name": "Primary Color",
+          "type": "color",
+          "description": "",
+          "required": false,
+          "validations": []
+        },
+        {
+          "key": "secondary_color",
+          "name": "Secondary Color",
+          "type": "color",
+          "description": "",
+          "required": false,
+          "validations": []
+        },
+        {
+          "key": "customers_access",
+          "name": "Customers Access",
+          "type": "list.customer_reference",
+          "description": "",
+          "required": false,
+          "validations": []
+        },
+        {
+          "key": "connected_shopify_b2b_company",
+          "name": "Connected Shopify B2B Company",
+          "type": "company_reference",
           "description": "",
           "required": false,
           "validations": []
