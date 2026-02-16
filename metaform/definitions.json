@@ -1,8 +1,44 @@
 {
   "version": "1.0",
-  "capturedAt": "2026-02-16T02:53:48.248Z",
+  "capturedAt": "2026-02-16T06:46:31.832Z",
   "shop": "admin-ui-sbx.myshopify.com",
   "metafieldDefinitions": [
+    {
+      "ownerType": "ARTICLE",
+      "namespace": "custom",
+      "key": "material_obj_ref",
+      "name": "material obj ref",
+      "description": "",
+      "type": "metaobject_reference",
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "gid://shopify/MetaobjectDefinition/12213518396"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "COMPANY",
+      "namespace": "custom",
+      "key": "company_def_test_new_pinned",
+      "name": "company def test new pinned",
+      "description": "",
+      "type": "json",
+      "validations": [
+        {
+          "name": "schema",
+          "value": "{\"type\":\"object\",\"required\":[\"version\",\"dimensions\",\"materials\"],\"properties\":{\"version\":{\"type\":\"string\"},\"dimensions\":{\"type\":\"object\",\"required\":[\"width_mm\",\"height_mm\",\"depth_mm\"],\"properties\":{\"width_mm\":{\"type\":\"number\"},\"height_mm\":{\"type\":\"number\"},\"depth_mm\":{\"type\":\"number\"}}},\"materials\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"compliance\":{\"type\":\"object\",\"properties\":{\"rohs\":{\"type\":\"boolean\"},\"fcc\":{\"type\":\"boolean\"}}},\"warranty_months\":{\"type\":\"integer\"}}}"
+        }
+      ],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      }
+    },
     {
       "ownerType": "PRODUCT",
       "namespace": "custom",
@@ -192,6 +228,31 @@
               "value": "material"
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "test",
+      "name": "test",
+      "description": "",
+      "displayNameKey": null,
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": true,
+        "translatable": true,
+        "renderable": true
+      },
+      "fieldDefinitions": [
+        {
+          "key": "test",
+          "name": "test",
+          "type": "multi_line_text_field",
+          "description": "",
+          "required": false,
+          "validations": []
         }
       ]
     }
