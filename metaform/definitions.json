@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "capturedAt": "2026-02-16T06:46:31.832Z",
+  "capturedAt": "2026-02-16T08:53:50.888Z",
   "shop": "admin-ui-sbx.myshopify.com",
   "metafieldDefinitions": [
     {
@@ -86,6 +86,32 @@
       "access": {
         "admin": "PUBLIC_READ_WRITE",
         "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "test_data",
+      "key": "binding_mount",
+      "name": "Snowboard binding mount",
+      "description": "The type of binding mount used on the snowboard",
+      "type": "single_line_text_field",
+      "validations": [],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "NONE"
+      }
+    },
+    {
+      "ownerType": "PRODUCT",
+      "namespace": "test_data",
+      "key": "snowboard_length",
+      "name": "Snowboard length",
+      "description": "The length of the snowboard",
+      "type": "dimension",
+      "validations": [],
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "NONE"
       }
     },
     {
@@ -250,6 +276,31 @@
           "key": "test",
           "name": "test",
           "type": "multi_line_text_field",
+          "description": "",
+          "required": false,
+          "validations": []
+        }
+      ]
+    },
+    {
+      "type": "test_cart",
+      "name": "test-cart",
+      "description": "",
+      "displayNameKey": null,
+      "access": {
+        "admin": "PUBLIC_READ_WRITE",
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": true,
+        "translatable": false,
+        "renderable": false
+      },
+      "fieldDefinitions": [
+        {
+          "key": "cartlineitems",
+          "name": "cartLineItems",
+          "type": "list.variant_reference",
           "description": "",
           "required": false,
           "validations": []
